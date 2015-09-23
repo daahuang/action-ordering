@@ -15,7 +15,7 @@ S           = 0;
 
 % if using the full dataset, load this file, the split will be carried out
 % that way you can use various splits
-datapath = '/YOUR_PATH_HERE/full_dataset.mat';
+datapath = './full_dataset.mat';
 
 [perf_val, perf_test, perf_classif, obj] = experiment( datapath, tau, ...
     aleph, lambda, kappa0, seed, S, params );

@@ -4,9 +4,10 @@ function [ a ] = optimize_a( l, annot )
 
 a = cell(length(l), 1);
 
+K = size(l{1},1);
 for i = 1:length(l)
     % getting the annotation sequence
-    k = 17*ones(2*length(annot{i})+1, 1);
+    k = K*ones(2*length(annot{i})+1, 1);
    
     % adding "other" labels in between
     k(2:2:end) = annot{i};

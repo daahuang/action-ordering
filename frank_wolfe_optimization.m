@@ -3,6 +3,7 @@ function [ z, z_p, w, b, perf_val, perf_test, obj ] = frank_wolfe_optimization( 
     tau, aleph, lambda, kappa, params )
 
 [N, ~] = size(X);
+K = size(z, 2);
 
 % pre-computing heavy stuff
 GXTP = compute_GXTP(X, lambda);
@@ -23,7 +24,7 @@ tic;
 for i = 1:params.niter
     
     % cutting the gradient into clips
-    l = mat2cell(grad, 17, clips);
+    l = mat2cell(grad, K, clips);
     
     % performing the Dynamic Programing
     a = optimize_a(l, annot);

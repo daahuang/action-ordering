@@ -31,7 +31,10 @@ clips   = cellfun(@(x) size(x, 1), Y);
 z = get_interior_point(N, K, clips, annot);
 
 % setting parameters
-kappa = kappa0 * [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1]';
+% kappa = kappa0 * [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1]';
+kappa = -ones(K, 1);
+kappa(end) = 1;
+kappa = kappa0*kappa;
 
 % choosing supervised set
 [~, val, test, sup_idx, val_idx, test_idx] = get_sup_val(Y, clips, S);

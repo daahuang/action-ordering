@@ -48,7 +48,6 @@ kappa = kappa0*kappa;
 z_test = Xtest * w;
 perf_classif = evaluate(z_test, Ytest);
 
-save wieght w
 
 
 end

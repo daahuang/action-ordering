@@ -2,8 +2,10 @@ function [ GT, J, J_gt, J_pred, J_perclip, gt_perclip ] = all_jacquards( z_p, y,
 %ALL_JACQUARDS Summary of this function goes here
 %   Detailed explanation goes here
 
-Y = mat2cell(y, clips, 17);
-ZP = mat2cell(z_p, clips, 17);
+K = size(y,2);
+
+Y = mat2cell(y, clips, K);
+ZP = mat2cell(z_p, clips, K);
 
 J       = cell(length(Y), 1);
 J_gt    = cell(length(Y), 1);

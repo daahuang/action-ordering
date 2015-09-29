@@ -25,4 +25,4 @@ exit
 EOF
 
 # Display the output
-cat matlab_${arg}.out
+# cat matlab_${arg}.out

@@ -36,7 +36,7 @@ models_sup = supervised_baselines(datapath);
     
 outpath = fullfile(OUT_dir, sprintf('%s_s%d', fea_str, split));
 
-datapath = which(datapath);
+% datapath = which(datapath);
 
 save(outpath, 'models_sup', 'ordering', 'datapath')   
 
